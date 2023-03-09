@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
+ >
+ 
+ 
+  
+        
+        
+        
+ 
+ <context:annotation-config />
+ 
+ <!-- 
+ 
+ https://www.springframework.org/schema/context/spring-context.xsd
+  -->
+ 
+ <!--  
+ <bean class="springcore.ref.B" name="bref">
+ <property name ="y" value="12" />
+ </bean>
+ 
+ <bean class="springcore.ref.A" name="aref">
+ <property name="x"  value="11" />
+ <property name="obj">
+ <ref bean="bref"/>
+ </property>
+ </bean> 
+ 
+ <bean class="springcore.ref.A" name="a1ref" p:x="15" p:obj-ref="bref" />
+ 
+ -->
+ 
+ 
+ <!--  using constructor  manually
+ 
+ <bean name="bref1" class="springcore.ref.B">
+ <constructor-arg>
+ <value>20</value>
+ </constructor-arg>
+ 
+ </bean>
+ 
+ <bean name="aref1" class="springcore.ref.A" init-method="init" destroy-method="destroy">
+ <constructor-arg>
+ <value>10</value>
+ </constructor-arg>
+ <constructor-arg ref="bref1" />
+ </bean>
+  -->
+  
+  <!--  automatically -->
+  
+  <bean name="obj1" class="springcore.ref.B">
+ <constructor-arg>
+ <value>20</value>
+ </constructor-arg>
+ 
+ </bean>
+ 
+ <bean name="aref" class="springcore.ref.A">
+ <property name="x"  value="11" />
+ </bean>
+  
+  
+ </beans>
